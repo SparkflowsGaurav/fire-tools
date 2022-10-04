@@ -17,10 +17,14 @@ active_users_and_groups.py
 
 This script gets all active users and their groups. It then writes these details into a csv file.
 
+The parameters for this script are the host_url and the generated access token.
+
 display-hide-apps.py
 ----------------------
 
 This script displays or hide apps based on the customer’s licensed use case. Ex: sales & marketing customers should only see apps that are Sales & Marketing related. It would be done via the usecase of each app.  If the usecase of the fire app matches the use case in yaml (ex: marketing or finance), that app will be displayed. Any usecase of app not matching the customer’s use case will be hidden.
+
+This script requires the host_url and the generated access token as parameters, but it also takes in other parameters depending on what method you would like to use. 
 
 load-app.py
 -------------
@@ -31,13 +35,20 @@ This script will read project.json file and get the Project Tag to fetch the pro
    2. Or it would create a new one if it does not exist. 
    3. Or hide apps if doesn’t exist in zip file
 
+This script requires the token, the host_url, file path for the json file, and an optional group name as parameters.
 
 user_create_automation.py
 ---------------------------
 
 This script will  create_update_user details/delete_user/user_list/active_users_and_groups based on added arguments.
 
+This script requires the host_url, the token, and all the details of the user(userid, username, password, email, first_name, last_name, roles and groups) as parameters.
+
 import_project.py
 ----------------------
 
-This script will import project workflows, datasets, analytics apps and pipelines present in exported zip file in which it will read through that project folder whose name is given in arguments in given Project Id. 
+This script will import project workflows, datasets, analytics apps and pipelines present in exported zip file in which it will read through that project folder whose name is given in arguments in given Project Id.
+
+This script requires the token, the host_url, the file_path, the project_id, and the project_name as parameters. 
+
+
